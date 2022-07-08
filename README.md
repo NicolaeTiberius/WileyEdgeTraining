@@ -1,5 +1,16 @@
-# WileyEdgeTraining
+# WileyEdge JAVA-fullstack training
 
+Assignment 1:
+
+Understood basic looping by returning certain numbers 
+
+Undersood how to implement a random percentage/number and then used it to display random dog breeds for a dog.
+
+Understood how to use simple return functions that can do arithmetic calculations. Sum of numbers.
+
+Understood how to display different data types.  
+
+Implemented rock/paper/scissors game using a main game loop and test cases for a user and a bot.
 
 Assignment 2:
 
