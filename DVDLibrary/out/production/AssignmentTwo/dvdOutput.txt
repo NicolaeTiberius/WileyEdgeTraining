@@ -1,0 +1,16 @@
+
+DVD ID : 1, Title: Jaws,Release Date: 1011979, Mpaa: 15, Director: Spielberg, Studio: Warner, Rating: A biteful
+
+DVD ID : 2, Title: The lord of the rings: the fellowship of the ring,Release Date: 10122001, Mpaa: 13, Director: Peter Jackson, Studio: New Line Cinema, Rating: 10/10
+
+DVD ID : 3, Title: One,Release Date: 12121999, Mpaa: 18, Director: Terry, Studio: HBO, Rating: Yuck
+
+DVD ID : 4, Title: Gladiator,Release Date: 1052000, Mpaa: 15, Director: Ridley Scott, Studio: DreamWorks, Rating: Ridley Scott's Gladiator is an epic film with quotes to match
+
+DVD ID : 5, Title: Valhalla Rising,Release Date: 10102016, Mpaa: 21, Director: Thorsen, Studio: Norway Films, Rating: Good
+
+DVD ID : 6, Title: Dune,Release Date: 21102021, Mpaa: 15, Director: Denis Villeneuve, Studio: Legendary Pictures, Rating: magical
+
+DVD ID : 8, Title: Ending,Release Date: 1092016, Mpaa: 12, Director: Dennis Villeneuve, Studio: FilmNation Entertainment, Rating: 94% Approval rating on Rotten Tomatoes
+
+DVD ID : 9, Title: The Proposition,Release Date: 1042015, Mpaa: 18, Director: N. Cave, Studio: AMG, Rating: Excellent
