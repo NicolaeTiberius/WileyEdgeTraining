@@ -21,3 +21,12 @@ Uses simple OOP concepts.
 CRUD concepts.
 
 File IO and exception handling is done here as well.
+
+
+Assignment 3:
+
+Vending machine simulator that lets you input money into the machine, choose an item to buy and returns the chaneg back in coins to the user.
+
+Lots of file/io to read the stock of the items and write them at the end.
+
+Used Spring dependency injection withh MVC style structure.
