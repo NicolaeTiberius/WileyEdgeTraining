@@ -1,0 +1,7 @@
+Mars, 1.2, 10
+Twix, 1.3, 18
+Tayto, 1.0, 10
+Walkers, 1.1, 10
+Cola, 1.6, 10
+Fanta, 1.55, 10
+Rolo, 1.25, 5
