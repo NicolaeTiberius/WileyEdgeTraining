@@ -30,3 +30,11 @@ Vending machine simulator that lets you input money into the machine, choose an 
 Lots of file/io to read the stock of the items and write them at the end.
 
 Used Spring dependency injection withh MVC style structure.
+
+
+
+Spring Boot Templates:
+
+Carried out several tasks that aim to improve knowledge of Spring Boot development.
+
+-Created an app that is able to receive and sends requests for operations of 2 numbers( + - * /) 
