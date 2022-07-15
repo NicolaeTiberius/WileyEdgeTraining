@@ -32,6 +32,9 @@
   Used Spring dependency injection withh MVC style structure.
 
 
+**Assignment 6**
+
+Guess the number - bulls and cows
 
 **Spring Boot Templates:**
 
