@@ -1,0 +1,5 @@
+com\GuessTheNumber\dto\GameNumber.class
+com\GuessTheNumber\controller\GameController.class
+com\GuessTheNumber\dao\GuessDao.class
+com\GuessTheNumber\App.class
+com\GuessTheNumber\dao\GuessDaoImpl.class
