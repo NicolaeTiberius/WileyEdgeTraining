@@ -2,6 +2,7 @@ package com.GuessTheNumber;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//RUNS THE MAIN APPLICATION
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {

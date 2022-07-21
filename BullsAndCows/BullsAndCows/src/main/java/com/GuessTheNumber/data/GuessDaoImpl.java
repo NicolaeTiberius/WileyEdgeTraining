@@ -1,17 +1,28 @@
 package com.GuessTheNumber.data;
 
 import com.GuessTheNumber.models.GameNumber;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Repository
+@Profile("memory")
 public class GuessDaoImpl implements  GuessDao {
 
 
+    private final JdbcTemplate jdbcTemplateObject;
+
     private static final List<GameNumber> gameNumbers = new ArrayList<>();
+
+    public GuessDaoImpl(JdbcTemplate jdbcTemplateObject) {
+        this.jdbcTemplateObject = jdbcTemplateObject;
+    }
 
 
     //Used manipulate the arraylist and game logic
@@ -21,10 +32,10 @@ public class GuessDaoImpl implements  GuessDao {
         return game;
     }
 
-
+//STARTS A GAME AND RETURNS THE GAME ID - POST METHOD
     @Override
     public int beginGame() {
-        GuessDao guessDao = new GuessDaoImpl();
+        GuessDao guessDao = new GuessDaoImpl(jdbcTemplateObject);
         //starts a game and sets the game status.
         boolean gameStatus = false;
         GameNumber newGame = new GameNumber(gameStatus);
@@ -41,7 +52,10 @@ public class GuessDaoImpl implements  GuessDao {
     //"guess" – POST – Makes a guess by passing the guess and gameId in as JSON.
     @Override
     public GameNumber guess(int userGuess, int GameId) {
-        GuessDao guessDao = new GuessDaoImpl();
+        GuessDao guessDao = new GuessDaoImpl(jdbcTemplateObject);
+
+        GuessDao guessDao1 = new GuessDatabaseDao(jdbcTemplateObject);
+
         //CONVERT the user guess to a string then to int array.
         String[] result;
         String userArrayString = Integer.toString(userGuess);
@@ -87,6 +101,8 @@ public class GuessDaoImpl implements  GuessDao {
                     //sets the user result and status, so they finished game.
                     userObject.setResults(result);
                     userObject.setStatus(true);
+                    //updates database
+                    guessDao1.add(game);
                     //updates the arraylist
                     return userObject;
                 }
@@ -96,8 +112,16 @@ public class GuessDaoImpl implements  GuessDao {
                 gameNumbers.set(index,userObject);
                 userObject.setResults(result);
                 userObject.setRandomNumber(actualArray);
+
+                //For the date and user result need to format it properly.
+                Date date = new Date();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss") ;
+                String currentDateTime = format.format(date);
+                userObject.setDate(currentDateTime);
                 //updates the arrayList
 
+                /**ERROR HANDLING THAT COULD NOT BE FULLY RESOLVED  */
+//                guessDao1.add(userObject);
 
                 //if rounds is higher than  10, they lose game.
                 if(userObject.getGameRound()>10){
@@ -108,13 +132,16 @@ public class GuessDaoImpl implements  GuessDao {
                 }
             }//end if game id is correct
 
-            //if ID doesn't exist
+            //if ID doesn't exist or repeated
             else{
                 System.out.println("Game ID does not work");
                 break;
             }
 
         }//end loop for id
+
+        //add it to database
+
 
         return userObject;
     }

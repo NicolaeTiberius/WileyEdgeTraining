@@ -44,15 +44,15 @@ public class GameController {
     }
 
     //Returns all the games that have happened.
-    @GetMapping
+    @GetMapping("/game")
     public List<GameNumber> all(){
         return service.getAll();
     }
 
     //Returns the game with the specific id
     @GetMapping("/gameId")
-    public ResponseEntity<GameNumber>findbyId(@PathVariable int id){
-        GameNumber result = service.findById(id);
+    public ResponseEntity<GameNumber>findbyId(@PathVariable int gameId){
+        GameNumber result = service.findById(gameId);
         if(result ==null){
             return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
         }
@@ -61,7 +61,7 @@ public class GameController {
 
 
     //Deletes a game with the specified id
-    @DeleteMapping("/app")
+    @DeleteMapping("/delete")
     public ResponseEntity delete(@PathVariable int id){
         if(service.deleteById(id)){
             return new ResponseEntity(HttpStatus.NO_CONTENT);

@@ -9,6 +9,8 @@ public class GameNumber {
     private int id;
     private static int count = 1;
 
+    private String date;
+
     private int gameRound=0;
     private int[] randomNumber;
 
@@ -17,7 +19,12 @@ public class GameNumber {
     private String[]results;
 
 
+
     //CONSTRUCTOR
+    public GameNumber() {
+
+
+    }
     public GameNumber(boolean status) {
 
         this.status = status;
@@ -36,6 +43,7 @@ public class GameNumber {
     }
 
 
+
     public boolean isStatus() {
         return status;
     }
@@ -46,6 +54,20 @@ public class GameNumber {
 
     public String[] getResults() {
         return results;
+    }
+
+    public String getStringResults(){
+        String[] array = getResults();
+        String str =Arrays.toString(array);
+
+        return str;
+    }
+
+    public String setTotalResult(String str){
+        String[] array = getResults();
+         str =Arrays.toString(array);
+
+        return str;
     }
 
     public void setResults(String[] results) {
@@ -66,6 +88,14 @@ public class GameNumber {
 
     public void setGameRound(int gameRound) {
         this.gameRound = gameRound;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override
